@@ -1,0 +1,94 @@
+{
+	"export": ["build", "debug"],
+	"include": [
+		{
+			"as": "appconf",
+			"path": "${QOOXDOO_PATH}/tool/data/config/application.json"
+		},
+		{
+			"path": "image.json"
+		}
+	],
+	"jobs": {
+		"build": {
+			"compile" : {
+				"type": "build"
+			},
+			"compile-options": {
+				"paths": {
+					"file": "../../../eyeos/extern/js/qx.js"
+				},
+				"code": {
+					"locales" : ["de", "en", "es", "fr", "it", "nl", "sv"],
+					"optimize": ["basecalls", "privates", "strings", "variables"]
+				}
+			},
+			"copy-resources": {
+				"target": "../../../"
+			},
+			"exclude": ["qx.legacy.*", "qx.test.*"],
+			"include": ["qx.*", "aristo.Aristo", "qxdygraphs.*", "svg.*"],
+			"library": [
+				{
+					"manifest": "Manifest.json"
+				},
+				{
+					"manifest" : "/Soft/qooxdoo-contrib/Aristo/trunk/Manifest.json"
+				},
+				{
+					"manifest" : "/Soft/qooxdoo-contrib/QxDyGraphs/trunk/Manifest.json"
+				},
+				{
+					"manifest" : "/Soft/qooxdoo-contrib/SVG/0.1/Manifest.json"
+				}
+
+			],
+			"settings": {
+				"qx.application": "eyeos.Application",
+				"qx.theme": "aristo.Aristo"
+			},
+			"variants": {
+				"qx.debug": ["off"]
+			}
+		},
+		
+		"debug": {
+			"compile" : {
+				"type": "build"
+			},
+			"compile-options": {
+				"paths": {
+					"file": "/home/julio/workspace/eyeos/eyeos/extern/js/qx.js"
+				},
+				"code": {
+					"format": ["on"],
+					"locales" : ["de", "en", "es", "fr", "it", "nl", "sv"]
+				}
+			},
+			"copy-resources": {
+				"target": "../../../"
+			},
+			"exclude": ["qx.legacy.*", "qx.test.*"],
+			"include": ["qx.*"],
+			"library": [
+				{
+					"manifest": "Manifest.json"
+				}
+			],
+			"settings": {
+				"qx.application": "eyeos.Application",
+				"qx.theme": "aristo.Aristo"
+			},
+			"variants": {
+				"qx.debug": ["on"]
+			}
+		}
+	},
+	"let": {
+		"APPLICATION": "qx",
+		"LOCALES": ["de", "en", "es", "fr", "it", "nl", "sv"],
+		"QOOXDOO_PATH": ".."
+	}
+
+
+}
