@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<meta>
+  <entry key="owner">julio</entry>
+  <entry key="group">users</entry>
+  <entry key="creationTime">1311351902</entry>
+  <entry key="modificationTime">1311351902</entry>
+  <entry key="permissions">-rw-------</entry>
+  <entry key="activity" type="array">
+    <entry key="0" type="array">
+      <entry key="type">creation</entry>
+      <entry key="by">eyeID_EyeosUser_2</entry>
+      <entry key="time">1311351902</entry>
+    </entry>
+  </entry>
+  <entry key="iconPositionX">347</entry>
+  <entry key="iconPositionY">117</entry>
+</meta>
